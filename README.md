@@ -1,27 +1,37 @@
-# go-webscraping
 
-# Comandos necessários
+# Web Scraping em Golang
 
+
+
+
+## Installation
+
+Install Web Scraping with go
+
+```bash
 mkdir nome da pasta
 cd nome da pasta
 go mod init nome do projeto
 go get -u github.com/gocolly/colly
+```
 
-# Explicação do Código
-# Criação do Coletor: O colly.NewCollector() cria um novo coletor para realizar o scraping.
 
-# Callback OnHTML:
+    
+## Explanation of the Code
 
-# O seletor .content-wrapper .article-item é usado para localizar os itens de artigo. Ajuste conforme necessário se a estrutura da página mudar.
-# e.ChildText(".article-title") extrai o título do artigo.
-# e.ChildText(".article-summary") extrai o resumo do artigo.
-# e.ChildAttr(".article-title a", "href") extrai o link para o artigo.
-# Callbacks OnRequest e OnError:
+- Collector Creation: colly.NewCollector() creates a new collector to perform scraping.
+- OnHTML callback:
+- The .content-wrapper .article-item selector is used to find article items.
+- Adjust as needed if the page structure changes. e.ChildText(".article-title") extracts the title of the article
+- e.ChildText(".article-summary") extracts the article summary. e.ChildAttr(".article-title a", "href") extracts the link to the article
+- OnRequest and OnError callbacks:
+- OnRequest prints the URL being visited. OnError handles and logs request errors
+- Visit URL: The c.Visit() method starts collecting data from the given URL
 
-# OnRequest imprime a URL sendo visitada.
-# OnError trata e registra erros de requisição.
-# Visitar a URL: O método c.Visit() inicia a coleta de dados da URL fornecida.
 
-## Comando para rodar o código
+## Usage/Examples
 
+```
 go run main.go
+```
+
