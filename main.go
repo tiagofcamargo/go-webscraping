@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// URL alvo
-	url := "url do site alvo"
+	url := "url alvo"
 
 	// Criar um coletor com suporte a cookies
 	c := colly.NewCollector(
